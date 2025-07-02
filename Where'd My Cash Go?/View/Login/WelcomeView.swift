@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-struct WelcomeView: View {
+struct WelcomView: View {
     
-    @State var showSignUp: Bool = false
     @State var showSignIn: Bool = false
-
+    @State var showSignUp: Bool = false
+    
     var body: some View {
         ZStack{
             Image("welcome_screen")
                 .resizable()
-                .scaledToFit()
+                .scaledToFill()
                 .frame(width: .screenWidth, height: .screenHeight)
             
             VStack{
@@ -24,12 +24,12 @@ struct WelcomeView: View {
                 Image("app_logo")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: .widthPer(per: 0.5))
-                    .padding(.top, .topInsets + 0.8)
+                    .frame(width: .widthPer(per: 0.5) )
+                    .padding(.top, .topInsets + 8)
+                
                 
                 Spacer()
-                
-                Text("Hola, Como Si mas. Expense tracker. Where did your Money go?")
+                Text("Congue malesuada in ac justo, a tristique\nleo massa. Arcu leo leo urna risus.")
                     .multilineTextAlignment(.center)
                     .font(.customFont(.regular, fontSize: 14))
                     .padding(.horizontal, 20)
@@ -39,30 +39,29 @@ struct WelcomeView: View {
                 PrimaryButton(title: "Get Started", onPressed: {
                     showSignUp.toggle()
                 })
-                .background(NavigationLink(destination: SocialSignupView(),isActive: $showSignUp, label: {
-                        EmptyView()
-                    })
-                )
+                .background( NavigationLink(destination: SocialSignupView(), isActive: $showSignUp, label: {
+                    EmptyView()
+                }) )
                 .padding(.bottom, 15)
                 
                 SecondaryButton(title: "I have an account", onPressed: {
                     showSignIn.toggle()
                 })
-                .background(NavigationLink(destination: SignInView(),isActive: $showSignIn, label: {
-                        EmptyView()
-                    })
-                )
+                .background( NavigationLink(destination: SignInView(), isActive: $showSignIn, label: {
+                    EmptyView()
+                }) )
                 .padding(.bottom, .bottomInsets)
             }
-                
         }
         .navigationTitle("")
-        .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
         .ignoresSafeArea()
     }
 }
 
-#Preview {
-    WelcomeView()
+struct WelcomView_Previews: PreviewProvider {
+    static var previews: some View {
+        WelcomView()
+    }
 }

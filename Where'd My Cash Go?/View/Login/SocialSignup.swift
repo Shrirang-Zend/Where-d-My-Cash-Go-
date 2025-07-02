@@ -12,7 +12,10 @@ struct SocialSignupView: View {
     
     var body: some View {
         ZStack{
+            
+            
             VStack{
+                
                 Image("app_logo")
                     .resizable()
                     .scaledToFit()
@@ -32,6 +35,7 @@ struct SocialSignupView: View {
                             .frame(width: .screenWidth, height: 48)
                         
                         HStack{
+                            
                             Image("apple")
                                 .resizable()
                                 .scaledToFit()
@@ -39,6 +43,7 @@ struct SocialSignupView: View {
                             
                             Text("Sign up with Apple")
                                 .font(.customFont(.semibold, fontSize: 14))
+                            
                         }
                         .padding(.horizontal, 20)
                     }
@@ -58,6 +63,7 @@ struct SocialSignupView: View {
                             .frame(width: .screenWidth, height: 48)
                         
                         HStack{
+                            
                             Image("google")
                                 .resizable()
                                 .scaledToFit()
@@ -65,6 +71,7 @@ struct SocialSignupView: View {
                             
                             Text("Sign up with Google")
                                 .font(.customFont(.semibold, fontSize: 14))
+                            
                         }
                         .padding(.horizontal, 20)
                     }
@@ -84,6 +91,7 @@ struct SocialSignupView: View {
                             .frame(width: .screenWidth, height: 48)
                         
                         HStack{
+                            
                             Image("fb")
                                 .resizable()
                                 .scaledToFit()
@@ -91,6 +99,7 @@ struct SocialSignupView: View {
                             
                             Text("Sign up with Facebook")
                                 .font(.customFont(.semibold, fontSize: 14))
+                            
                         }
                         .padding(.horizontal, 20)
                     }
@@ -106,8 +115,10 @@ struct SocialSignupView: View {
                     .foregroundColor(.white)
                     .padding(.bottom, 25)
                 
+                
+                
                 SecondaryButton(title: "Sign up with E-mail", onPressed: {
-                        showSignUp.toggle()
+                    showSignUp.toggle()
                 })
                 .background( NavigationLink(destination: SignUpView(), isActive: $showSignUp, label: {
                     EmptyView()

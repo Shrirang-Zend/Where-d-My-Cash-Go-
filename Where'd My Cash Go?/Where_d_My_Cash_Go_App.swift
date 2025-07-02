@@ -12,7 +12,7 @@ struct Where_d_My_Cash_Go_App: App {
     var body: some Scene {
         WindowGroup {
             NavigationView{
-                WelcomeView()
+                WelcomView()
             }
         }
     }
